@@ -3,7 +3,7 @@ import Vapor
 
 
 struct ShopController: RouteCollection {
-    var endPoint = "/shops"
+    var endPoint = Config.shopURL
     func boot(routes: RoutesBuilder) throws {
         // This is intended
     }

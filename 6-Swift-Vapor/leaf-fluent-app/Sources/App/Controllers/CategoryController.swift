@@ -3,7 +3,7 @@ import Vapor
 
 
 struct CategoryController: RouteCollection {
-    var endPoint = "/categories"
+    var endPoint = Config.categoryURL
     func boot(routes: RoutesBuilder) throws {
         // This is intended
     }

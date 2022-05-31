@@ -2,7 +2,7 @@ import Fluent
 import Vapor
 
 final class Product: Model, Content {
-    static let schema = Config.productURL
+    static let schema = "products"
     
     @ID(key: .id)
     var id: UUID?
