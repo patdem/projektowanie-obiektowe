@@ -4,7 +4,7 @@ struct CreateShop: Migration {
     func prepare(on database: Database) -> EventLoopFuture<Void> {
         return database.schema("shop")
             .id()
-            .field("brand_name", .string, .required)
+            .field("brandName", .string, .required)
             .field("city", .string, .required)
             .create()
     }

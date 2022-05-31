@@ -6,7 +6,7 @@ struct CreateProduct: Migration {
             .id()
             .field("name", .string, .required)
             .field("description", .uuid, .required,.references("artists", "id"))
-            .foreignKey("category_id", references: "categories", "id", onDelete: .cascade)
+            .foreignKey("categoryId", references: "categories", "id", onDelete: .cascade)
             .field("value", .string, .required)
             .create()
     }

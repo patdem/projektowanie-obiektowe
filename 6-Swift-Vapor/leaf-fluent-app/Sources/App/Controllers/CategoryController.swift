@@ -3,12 +3,15 @@ import Vapor
 
 
 struct CategoryController: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {}
+    var endPoint = "/categories"
+    func boot(routes: RoutesBuilder) throws {
+        // This is intended
+    }
 
     func create(req: Request) throws -> EventLoopFuture<Response> {
         let category = try req.content.decode(Category.self)
         return category.save(on: req.db).map { _ in
-            return req.redirect(to: "/categories")
+            return req.redirect(to: endPoint)
         }
     }
 
@@ -28,7 +31,7 @@ struct CategoryController: RouteCollection {
                 category.name = input.name
                 category.description = input.description
                 return category.save(on: req.db).map { _ in
-                    return req.redirect(to: "/categories")
+                    return req.redirect(to: endPoint)
                 }
             }
     }
@@ -38,7 +41,7 @@ struct CategoryController: RouteCollection {
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .map { _ in
-                return req.redirect(to: "/categories")
+                return req.redirect(to: endPoint)
             }
     }
 }

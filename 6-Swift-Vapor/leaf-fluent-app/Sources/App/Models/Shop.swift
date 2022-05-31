@@ -7,17 +7,19 @@ final class Shop: Model, Content {
     @ID(key: .id)
     var id: UUID?
 
-    @Field(key: "brand_name")
-    var brand_name: String
+    @Field(key: "brandName")
+    var brandName: String
 
     @Field(key: "city")
     var city: String
 
-    init() { }
+    init() {
+        // This is intended
+    }
 
-    init(id: UUID? = nil, brand_name: String, city: String) {
+    init(id: UUID? = nil, brandName: String, city: String) {
         self.id = id
-        self.brand_name = brand_name
+        self.brandName = brandName
         self.city = city  
     }
 }

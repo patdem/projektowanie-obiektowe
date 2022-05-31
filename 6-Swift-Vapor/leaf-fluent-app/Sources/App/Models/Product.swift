@@ -10,19 +10,21 @@ final class Product: Model, Content {
     @Field(key: "name")
     var name: String
 
-    @Field(key: "category_id") 
-    var category_id: UUID
+    @Field(key: "categoryId") 
+    var categoryId: UUID
 
     @Field(key: "value")
     var value: String
 
 
-    init() { }
+    init() {
+        // This is intended
+    }
 
-    init(id: UUID? = nil, name: String, category_id: String, value: String) {
+    init(id: UUID? = nil, name: String, categoryId: String, value: String) {
         self.id = id
         self.name = name
         self.value = value
-        self.category_id = UUID(uuidString: category_id)!
+        self.categoryId = UUID(uuidString: categoryId)!
     }
 }

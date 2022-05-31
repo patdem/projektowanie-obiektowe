@@ -14,7 +14,7 @@
      <form action="/product/create" method="post">
      <ul type="1">
         #for(product in productList):
-            <li> <b>Name:</b> "#(product.name)"  <b> Category: </b>  #(product.category_id) <b> Value: </b>  #(product.value) <b> Product ID:</b> #(product.id)</li>
+            <li> <b>Name:</b> "#(product.name)"  <b> Category: </b>  #(product.categoryId) <b> Value: </b>  #(product.value) <b> Product ID:</b> #(product.id)</li>
         #endfor
     </ul> 
     </form>
@@ -39,7 +39,7 @@
             <form action="/product/create" method="post">
                 <fieldset class="form-group">
                     <input type="text" class="form-control" name="name" placeholder="Enter name">
-                    <input type="text" class="form-control" name="category_id" placeholder="Enter category_id">
+                    <input type="text" class="form-control" name="categoryId" placeholder="Enter categoryId">
                     <input type="text" class="form-control" name="value" placeholder="Enter value">
                     <button type="submit" class="entryform submit">Add</button>
                 </fieldset>
@@ -72,7 +72,7 @@
                     Value
                     <input type="text" name="value" class="form-control" value="#(product.value)" disabled>
                     Category
-                    <input type="text" name="category_id" class="form-control" value="#(product.category_id)" disabled>
+                    <input type="text" name="categoryId" class="form-control" value="#(product.categoryId)" disabled>
                     <button type="submit" class="entryform submit">Delete</button>
                 </fieldset>
                 
@@ -107,7 +107,7 @@
                     Value
                     <input type="text" name="value" class="form-control" value="#(product.value)" >
                     Category
-                    <input type="text" name="category_id" class="form-control" value="#(product.category_id)" >
+                    <input type="text" name="categoryId" class="form-control" value="#(product.categoryId)" >
                     <button type="submit" class="entryform submit">Edit</button>
                 </fieldset>
             </form>

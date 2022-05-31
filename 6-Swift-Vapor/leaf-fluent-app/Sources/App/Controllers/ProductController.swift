@@ -3,12 +3,15 @@ import Vapor
 
 
 struct ProductController: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {}
+    var endPoint = "/products"
+    func boot(routes: RoutesBuilder) throws {
+        // This is intended
+    }
 
     func create(req: Request) throws -> EventLoopFuture<Response> {
         let product = try req.content.decode(Product.self)
         return product.save(on: req.db).map { _ in
-            return req.redirect(to: "/products")
+            return req.redirect(to: endPoint)
         }
     }
 
@@ -27,9 +30,9 @@ struct ProductController: RouteCollection {
             .flatMap { product in
                 product.name = input.name
                 product.description = input.description
-                product.category_id = input.category_id
+                product.categoryId = input.categoryId
                 return product.save(on: req.db).map { _ in
-                    return req.redirect(to: "/products")
+                    return req.redirect(to: endPoint)
                 }
             }
     }
@@ -40,7 +43,7 @@ struct ProductController: RouteCollection {
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .map { _ in
-                return req.redirect(to: "/products")
+                return req.redirect(to: endPoint)
             }
     }
 }

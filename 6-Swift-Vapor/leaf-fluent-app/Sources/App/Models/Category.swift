@@ -13,7 +13,9 @@ final class Category: Model, Content {
     @Field(key: "description")
     var description: String
 
-    init() { }
+    init() {
+        // This is intended
+    }
 
     init(id: UUID? = nil, name: String, description: String) {
         self.id = id

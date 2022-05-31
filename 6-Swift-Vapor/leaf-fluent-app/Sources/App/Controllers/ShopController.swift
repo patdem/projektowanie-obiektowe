@@ -3,12 +3,15 @@ import Vapor
 
 
 struct ShopController: RouteCollection {
-    func boot(routes: RoutesBuilder) throws {}
+    var endPoint = "/shops"
+    func boot(routes: RoutesBuilder) throws {
+        // This is intended
+    }
 
     func create(req: Request) throws -> EventLoopFuture<Response> {
         let shop = try req.content.decode(Shop.self)
         return shop.save(on: req.db).map { _ in
-            return req.redirect(to: "/shops")
+            return req.redirect(to: endPoint)
         }
     }
 
@@ -25,10 +28,10 @@ struct ShopController: RouteCollection {
         return Shop.find(req.parameters.get("id"), on: req.db)
             .unwrap(or: Abort(.notFound))
             .flatMap { shop in
-                shop.brand_name = input.brand_name
+                shop.brandName = input.brandName
                 shop.city = input.city
                 return shop.save(on: req.db).map { _ in
-                    return req.redirect(to: "/shops")
+                    return req.redirect(to: endPoint)
                 }
             }
     }
@@ -38,7 +41,7 @@ struct ShopController: RouteCollection {
             .unwrap(or: Abort(.notFound))
             .flatMap { $0.delete(on: req.db) }
             .map { _ in
-                return req.redirect(to: "/shops")
+                return req.redirect(to: endPoint)
             }
     }
 }

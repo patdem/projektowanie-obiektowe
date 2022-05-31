@@ -13,7 +13,7 @@
      <form action="/shop/create" method="post">
      <ul type="1">
         #for(shop in shopList):
-            <li> <b>Brand name:</b> "#(shop.brand_name)"  <b> City: </b>  #(shop.city) <b>Shop ID:</b> #(shop.id)</li>
+            <li> <b>Brand name:</b> "#(shop.brandName)"  <b> City: </b>  #(shop.city) <b>Shop ID:</b> #(shop.id)</li>
         #endfor
     </ul> 
     </form>
@@ -36,7 +36,7 @@
         <div class="col-md-12">
             <form action="/shop/create" method="post">
                 <fieldset class="form-group">
-                    <input type="text" class="form-control" name="brand_name" placeholder="Enter brand name">
+                    <input type="text" class="form-control" name="brandName" placeholder="Enter brand name">
                     <input type="text" class="form-control" name="city" placeholder="Enter city">
                     <button type="submit" class="entryform submit">Add</button>
                 </fieldset>
@@ -65,7 +65,7 @@
                     Shop ID 
                     <input type="text" name="id" class="form-control" value="#(shop.id)" disabled>
                     Brand name
-                    <input type="text" name="title" class="form-control" value="#(shop.brand_name)" disabled>
+                    <input type="text" name="title" class="form-control" value="#(shop.brandName)" disabled>
                     City
                     <input type="text" name="album" class="form-control" value="#(shop.city)" disabled>
                     <button type="submit" class="entryform submit">Delete</button>
@@ -95,7 +95,7 @@
                     Shop ID
                     <input type="text" name="id" class="form-control" value="#(shop.id)" disabled>
                     Brand name
-                    <input type="text" name="brand_name" class="form-control" value="#(shop.brand_name)" >
+                    <input type="text" name="brandName" class="form-control" value="#(shop.brandName)" >
                     City
                     <input type="text" name="city" class="form-control" value="#(shop.city)" >
                     <button type="submit" class="entryform submit">Edit</button>
