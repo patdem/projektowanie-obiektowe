@@ -5,10 +5,10 @@ import {ProductContext} from "./ProductContext";
 
 export const CartContext = createContext({
   cart: [],
-  addProductToCart: product => {
+  addProductToCart: _product => {
     // This is intentional
   },
-  removeProductFromCart: productId => {
+  removeProductFromCart: _productId => {
     // This is intentional
   }
 });

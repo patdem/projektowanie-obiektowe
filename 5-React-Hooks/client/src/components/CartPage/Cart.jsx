@@ -3,7 +3,7 @@ import {CartContext} from "../../contexts/CartContext";
 import CartProduct from "./CartProduct";
 import Button from "react-bootstrap/Button";
 
-export const Cart = props => {
+export const Cart = _props => {
   const context = useContext(CartContext);
 
   if (context.cart.length < 1) {

@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3001;
 
 const app = express();
 
-app.get("/products", (req, res) => {
+app.get("/products", (_req, res) => {
   res.json([
     {
       id: 0,
@@ -27,7 +27,7 @@ app.get("/products", (req, res) => {
   ]);
 });
 
-app.get("/categories", (req, res) => {
+app.get("/categories", (_req, res) => {
   res.json([
     {
       id: 0,
