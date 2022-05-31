@@ -3,7 +3,11 @@ import Vapor
 
 
 struct ProductController: RouteCollection {
-    var endPoint = Config.productURL
+    let endPoint: String
+    init (endPoint: String) {
+        self.endPoint = endPoint
+    }
+    
     func boot(routes: RoutesBuilder) throws {
         // This is intended
     }

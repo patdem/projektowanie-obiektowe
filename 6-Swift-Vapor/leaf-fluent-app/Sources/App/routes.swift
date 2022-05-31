@@ -2,7 +2,7 @@ import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    let productController = ProductController()
+    let productController = ProductController(endPoint: "/products")
     
     app.get("products", use: productController.read)
     
@@ -10,7 +10,7 @@ func routes(_ app: Application) throws {
     app.post("product", "update", ":id", use: productController.update)
     app.post("product", "delete", ":id", use: productController.delete)
 
-    let categoryController = CategoryController()
+    let categoryController = CategoryController(endPoint: "/categories")
 
     app.get("categories", use: categoryController.read)
     
@@ -18,7 +18,7 @@ func routes(_ app: Application) throws {
     app.post("category", "update", ":id", use: categoryController.update)
     app.post("category", "delete", ":id", use: categoryController.delete)
 
-    let shopController = ShopController()
+    let shopController = ShopController(endPoint: "/shops")
 
     app.get("shops", use: shopController.read)
     
