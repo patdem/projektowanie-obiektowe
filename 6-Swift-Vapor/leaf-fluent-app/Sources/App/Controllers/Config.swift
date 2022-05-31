@@ -1,5 +1,5 @@
 class Config {
-    var categoryURL = "/categories"
-    var productURL = "/products"
-    var shopURL = "/shops"
+    var categoryURL = "/categories" //NOSONAR
+    var productURL = "/products" //NOSONAR
+    var shopURL = "/shops" //NOSONAR
 }
