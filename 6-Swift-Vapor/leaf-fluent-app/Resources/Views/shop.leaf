@@ -1,0 +1,107 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="heading">
+                <h1>Shops:</h1>
+            </div>
+        </div> 
+    </div>
+</div>
+
+<div class="container max-width">
+    <div class="row">
+     <form action="/shop/create" method="post">
+     <ul type="1">
+        #for(shop in shopList):
+            <li> <b>Brand name:</b> "#(shop.brand_name)"  <b> City: </b>  #(shop.city) <b>Shop ID:</b> #(shop.id)</li>
+        #endfor
+    </ul> 
+    </form>
+    </div>
+</div>
+
+<!--form-->
+<section class="form" id="myForm">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="heading">
+                <h1>Add shop</h1>
+            </div>
+        </div> 
+    </div>
+</div>
+<div class="container max-width">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/shop/create" method="post">
+                <fieldset class="form-group">
+                    <input type="text" class="form-control" name="brand_name" placeholder="Enter brand name">
+                    <input type="text" class="form-control" name="city" placeholder="Enter city">
+                    <button type="submit" class="entryform submit">Add</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+</section>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="heading">
+                <h1>Delete shop</h1>
+            </div>
+        </div> 
+    </div>
+</div>
+
+#for(shop in shopList):
+<div class="container max-width">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/shop/delete/#(shop.id)" method="post">
+                <fieldset class="form-group">
+                    Shop ID 
+                    <input type="text" name="id" class="form-control" value="#(shop.id)" disabled>
+                    Brand name
+                    <input type="text" name="title" class="form-control" value="#(shop.brand_name)" disabled>
+                    City
+                    <input type="text" name="album" class="form-control" value="#(shop.city)" disabled>
+                    <button type="submit" class="entryform submit">Delete</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+#endfor
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="heading">
+                <h1>Edit shop</h1>
+            </div>
+        </div> 
+    </div>
+</div>
+
+#for(shop in shopList):
+<div class="container max-width">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/shop/update/#(shop.id)" method="post">
+                <fieldset class="form-group">
+                    Shop ID
+                    <input type="text" name="id" class="form-control" value="#(shop.id)" disabled>
+                    Brand name
+                    <input type="text" name="brand_name" class="form-control" value="#(shop.brand_name)" >
+                    City
+                    <input type="text" name="city" class="form-control" value="#(shop.city)" >
+                    <button type="submit" class="entryform submit">Edit</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+#endfor
