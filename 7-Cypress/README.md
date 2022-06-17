@@ -1,0 +1,3 @@
+# Cypress tests on Browserstack
+
+[Link to tests](https://automate.browserstack.com/dashboard/v2/public-build/ZzJiRkFUWE1maU9oNmplbGIrQjBLRy9kNUdhTkttYmh2bWJvNmJFYXQvVUh0WHVDSmUvREMwdmtGd2I0STV6YjlMS2E5elZBQ1BtNk5FVnhlNEJCdGc9PS0tRGc5TGgyTkhpME1rakZsbGJUVGJKQT09--af53c357f7adacde617f118d0ec88108ba1f0772)
